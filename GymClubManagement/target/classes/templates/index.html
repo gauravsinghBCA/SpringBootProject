@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav Gym Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            background: url('/image/page.jpg');
+            
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: "Jost", sans-serif;
+            overflow: hidden;
+        }
+        .left{
+            position: absolute;
+            display: inline-block;
+            /* border: 2px solid rgb(68, 18, 18); */
+            width: 70px;
+            left: 30px;
+            top: 30px;
+            text-align: center;
+
+        }
+        .right{
+            display: inline-block;
+            position: absolute;
+            /* border: 2px solid rgb(68, 18, 18); */
+            width: 176px;
+            top: 30px;
+            right: 30px;
+        }
+        .mid{
+            /* border: 2px solid rgb(68, 18, 18); */
+            display: block;
+            width: 800px;
+            margin: 30px auto;
+
+        }
+        .navbar{
+            display: inline-block;
+        }
+        .navbar li{
+            display: inline-block;
+            font-size: 16px;
+        }
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 10px;
+            margin: 40px;
+        }
+        .left img{
+            width: 70px;
+        }
+        .btn{
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: "Jost", sans-serif ;
+        }
+        .title{
+            /* border: 2px solid rebeccapurple; */
+            display: inline-block;
+              width: 288px;
+            margin: 0px 580px;
+            text-align: center;
+            font-family: "Permanent Marker", cursive;
+        }
+        .textbox{
+            margin-top: 10px;
+        }
+        .btnn{
+            margin: 20px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+     <header class="header">
+        <div class="left">
+            <img src="/image/logo.jpg" alt="">
+            <div>GGC</div>
+        </div>
+        <div class="mid">
+             <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Facilities</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a> </li>
+             </ul>
+        </div>
+        <div class="right">
+            <button class="btn">Call Us Now</button>
+            <button class="btn">Email Now</button>
+        </div>
+     </header>
+     <div class="title">
+        <h1>Gaurav Gym Club</h1>
+        <h3><u>Join Now</u></h3>
+        
+        <form action="#" th:action="@{/save}" th:object="${joiner}" method="POST">
+            <div class="textbox">
+               Name: <input type="text" th:field="*{fullName}"    placeholder="Enter Name" required>
+            </div>
+            <div class="textbox">
+                Phone No.:<input type="number"   th:field="*{phoneNumber}" placeholder="Mobile Numbre" required>
+            </div>
+            <div class="textbox">
+             Email:<input type="email"  th:field="*{email}" placeholder="Email" required>
+            </div>
+            <div class="textbox">
+               Date of Birth: <input type="date"  th:field="*{dateOfBirth}"  placeholder="date" required>
+            </div>
+            <button class="btnn">Submit</button>
+        </form>
+     </div>
+
+</body>
+</html>
